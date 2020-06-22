@@ -1,1 +1,25 @@
-<h1> {{title}}</h1>
+<h1>{{ title }}</h1>
+<!-- <span>
+  <nav>
+    <a
+      routerLink="/to-do"
+      routerLinkActive="active-link"
+      *ngIf="authService.user | async"
+      >To-Do</a
+    >
+    <a
+      routerLink="/login"
+      routerLinkActive="active-link"
+      *ngIf="!(authService.user | async)"
+      >Login</a
+    >
+    <a
+      routerLink="/register"
+      routerLinkActive="active-link"
+      *ngIf="!(authService.user | async)"
+      >Register</a
+    >
+  </nav>
+</span> -->
+
+<router-outlet></router-outlet>
