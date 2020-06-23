@@ -1,1 +1,14 @@
-<p>todo works!</p>
+<div>
+  <div><h4>TODO TASKS</h4></div>
+  <ul>
+    <li
+      *ngFor="let todos of todose | async"
+      [class.selected]="todos === selectedTaskMain"
+      (click)="selectTaskMain(todos)"
+    >
+      <span>{{ todos.value }}</span>
+    </li>
+  </ul>
+</div>
+<app-todo-list></app-todo-list>
+<app-todo-edit [todos]="selectedTaskMain"></app-todo-edit>

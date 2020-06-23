@@ -1,5 +1,47 @@
 <p>todo-list!</p>
 
+<!-- <div class="container-fluid">
+  <div style="width: 300px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="todos">TODO</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter content..."
+          id="todos"
+          required
+          [(ngModel)]="todoValue"
+          name="todos"
+        />
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <h2>Content from Firebase</h2>
+  <div class="col-md-3">
+    <pre *ngFor="let todos of todos | async">{{ todos.content }}</pre>
+  </div>
+</div> -->
+<div>
+  <form (ngSubmit)="createTodos(); todoForm.resetForm()" #todoForm="ngForm">
+    <div>
+      Add a To-Do
+    </div>
+    <input
+      type="text"
+      placeholder="Todo"
+      [(ngModel)]="todoValue"
+      name="todos"
+    />
+    <button type="submit">Add</button>
+  </form>
+</div>
+
 <div class="container">
   <div class="row justify-content-center">
     <button class="btn-danger" (click)="authservice.signOut()">Logout</button>

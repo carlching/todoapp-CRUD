@@ -3,6 +3,7 @@
     <div class="col-md-6">
       <form (ngSubmit)="login()">
         <h3>Login</h3>
+
         <div class="form-group p-2">
           <input
             type="email"
@@ -26,7 +27,7 @@
         <div class="form-group p-2">
           <button type="submit" class="btn btn-primary">Login</button>
           <div class="register">
-            <a href="#" routerLink="/register"> New User Register</a>
+            <a href="#" routerLink="/register"> New User? Register!</a>
           </div>
         </div>
       </form>
@@ -38,6 +39,18 @@
         <p *ngIf="errorMessage.length > 0" class="text-danger">
           {{ errorMessage }}
         </p>
+      </div>
+      <div class="form-group p-2">
+        <a
+          href="https://github.com/carlching/todoapp-CRUD"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            width="100"
+            alt="Github Logo"
+            src="http://pngimg.com/uploads/github/github_PNG20.png"
+        /></a>
       </div>
     </div>
   </div>

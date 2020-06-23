@@ -1,1 +1,10 @@
-<p>todo-edit works!</p>
+<div *ngIf="todos">
+  <form #todoForm="ngForm">
+    <div>
+      EDIT TODO
+    </div>
+    <input type="text" placeholder="todo" [(ngModel)]="todos" name="todos" />
+    <button (click)="updateTodos()">Update</button>
+    <button (click)="deleteTodos()">Delete</button>
+  </form>
+</div>
