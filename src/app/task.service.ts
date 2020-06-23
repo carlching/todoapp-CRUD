@@ -3,6 +3,7 @@ import { AngularFireObject } from '@angular/fire/database';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { isNgTemplate } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,8 @@ export class TaskService {
 
   //FIREBASE CRUD FUNCTION
   createTodos(todos: any) {
-    this.db.list('todos').push(todos);
+    this.db.list('todos').push({ value: todos });
+    console.log(todos);
   }
 
   readTodos() {
@@ -30,10 +32,11 @@ export class TaskService {
         )
       );
     return this.todos;
+    console.log(this.todos);
   }
 
-  updateTodos(id: any, value: any) {
-    this.db.list('todos').set(id, { value: this.todos });
+  updateTodos(id: any, todos: any) {
+    this.db.list('todos').set(id, { value: todos });
   }
 
   deleteTodos(id: any) {

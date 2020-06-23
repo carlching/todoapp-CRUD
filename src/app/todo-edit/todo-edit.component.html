@@ -3,7 +3,12 @@
     <div>
       EDIT TODO
     </div>
-    <input type="text" placeholder="todo" [(ngModel)]="todos" name="todos" />
+    <input
+      type="text"
+      placeholder="todo"
+      [(ngModel)]="todos.value"
+      name="todos"
+    />
     <button (click)="updateTodos()">Update</button>
     <button (click)="deleteTodos()">Delete</button>
   </form>

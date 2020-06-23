@@ -16,6 +16,7 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
     this.todose = this.taskService.readTodos();
+    console.log(this.todose);
   }
   selectTaskMain(todos: TaskMain): void {
     this.selectedTaskMain = todos;

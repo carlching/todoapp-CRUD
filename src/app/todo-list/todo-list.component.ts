@@ -23,6 +23,7 @@ export class TodoListComponent implements OnInit {
   }
   createTodos() {
     this.taskService.createTodos(this.todoValue);
+    console.log(this.todoValue);
   }
   //TODO
   /* onSubmit() {
