@@ -1,15 +1,22 @@
-<div *ngIf="todos">
+<div *ngIf="todos" class="row justify-content-center">
   <form #todoForm="ngForm">
     <div>
-      EDIT TODO
+      <label for="exampleInputEmail1">
+        Edit Todo Task
+      </label>
     </div>
     <input
+      class="form-control"
       type="text"
       placeholder="todo"
       [(ngModel)]="todos.value"
       name="todos"
     />
-    <button (click)="updateTodos()">Update</button>
-    <button (click)="deleteTodos()">Delete</button>
+    <div class="row justify-content-center">
+      <button class="btn btn-success" (click)="updateTodos()">Update</button>
+      &nbsp;<button class="btn btn-danger" (click)="deleteTodos()">
+        Delete
+      </button>
+    </div>
   </form>
 </div>

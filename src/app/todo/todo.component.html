@@ -1,14 +1,19 @@
 <div>
-  <div><h4>TODO TASKS</h4></div>
-  <ul>
+  <div><h5>TODO TASKS:</h5></div>
+  <ul class="list-group">
     <li
+      class="list-group-item"
       *ngFor="let todos of todose | async"
       [class.selected]="todos === selectedTaskMain"
       (click)="selectTaskMain(todos)"
     >
-      <span>{{ todos.value }}</span>
+      <a class="list-group-item list-group-item-action">
+        <span>{{ todos.value }}</span></a
+      >
     </li>
   </ul>
 </div>
-<app-todo-list></app-todo-list>
+
 <app-todo-edit [todos]="selectedTaskMain"></app-todo-edit>
+<br /><br />
+<app-todo-list></app-todo-list>
